@@ -3,14 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Produtos - Vendejá</title>
-    <link rel="stylesheet" href="style.css">
+    <title>VendeJá - Produtos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f3f3f3;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        input, textarea, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            background-color: #28a745;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        .produto {
+            max-width: 400px;
+            background: white;
+            margin: 15px auto;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Produtos disponíveis</h1>
 
-    <p>Aqui aparecerá a lista de produtos do app.</p>
+    <h1>Cadastrar Produto</h1>
 
-    <a href="index.html">Voltar ao início</a>
+    <form id="formProduto">
+        <input type="text" id="nome" placeholder="Nome do produto" required>
+        <input type="number" id="preco" placeholder="Preço" required>
+        <textarea id="descricao" placeholder="Descrição do produto" rows="4"></textarea>
+        <input type="text" id="imagem" placeholder="Link da imagem (URL)">
+        <button type="submit">Salvar Produto</button>
+    </form>
+
+    <h1>Produtos Cadastrados</h1>
+    <div id="listaProdutos"></div>
+
+    <script>
+        document.getElementById("formProduto").addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            let nome = document.getElementById("nome").value;
+            let preco = document.getElementById("preco").value;
+            let descricao = document.getElementById("descricao").value;
+            let imagem = document.getElementById("imagem").value;
+
+            let produto = {
+                nome: nome,
+                preco: preco,
+                descricao: descricao,
+                imagem: imagem
+            };
+
+            let produtos = JSON.parse(localStorage.getItem("produtos")) || [];
+            produtos.push(produto);
+            localStorage.setItem("produtos", JSON.stringify(produtos));
+
+            mostrarProdutos();
+            document.getElementById("formProduto").reset();
+        });
+
+        function mostrarProdutos() {
+            let produtos = JSON.parse(localStorage.getItem("produtos")) || [];
+            let lista = document.getElementById("listaProdutos");
+            lista.innerHTML = "";
+
+            produtos.forEach(p => {
+                lista.innerHTML += `
+                    <div class="produto">
+                        <h2>${p.nome}</h2>
+                        <p><strong>Preço:</strong> R$ ${p.preco}</p>
+                        <p>${p.descricao}</p>
+                        ${p.imagem ? <img src="${p.imagem}" alt="Imagem do produto"> : ""}
+                    </div>
+                `;
+            });
+        }
+
+        mostrarProdutos();
+    </script>
+
 </body>
 </html>
