@@ -7,6 +7,13 @@
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
+    <nav>
+        <a href="index.html">Início</a>
+        <a href="produto.html">Produtos</a>
+        <a href="contato.html">Contato</a>
+    </nav>
+
     <h1>Página de Produto</h1>
     <p>Aqui você poderá ver detalhes dos produtos em breve.</p>
 
