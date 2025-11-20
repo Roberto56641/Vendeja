@@ -1,139 +1,22 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VendeJá - Loja Online</title>
-
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f2f6ff;
-        }
-
-        header {
-            background-color: #0057ff;
-            color: white;
-            padding: 20px;
-            text-align: center;
-            font-size: 26px;
-            font-weight: bold;
-        }
-
-        .banner {
-            width: 100%;
-            height: 180px;
-            background: linear-gradient(to right, #0057ff, #4da3ff);
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 28px;
-            font-weight: bold;
-        }
-
-        .container {
-            padding: 20px;
-        }
-
-        h2 {
-            color: #003f99;
-        }
-
-        .produtos {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-        }
-
-        .card {
-            background: white;
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-            text-align: center;
-        }
-
-        .card img {
-            width: 100%;
-            border-radius: 10px;
-        }
-
-        .card button {
-            background-color: #0057ff;
-            color: white;
-            border: none;
-            padding: 10px 0;
-            width: 100%;
-            font-size: 16px;
-            border-radius: 8px;
-            margin-top: 10px;
-            cursor: pointer;
-        }
-
-        .card button:hover {
-            background-color: #003fbb;
-        }
-
-        footer {
-            margin-top: 30px;
-            background-color: #0057ff;
-            color: white;
-            text-align: center;
-            padding: 15px;
-        }
-    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VendeJá - App de Vendas</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<header>
-    VendeJá - Sua Loja Online
-</header>
+    <nav>
+        <a href="index.html">Início</a>
+        <a href="produto.html">Produtos</a>
+        <a href="contato.html">Contato</a>
+    </nav>
 
-<div class="banner">
-    Promoções Imperdíveis Hoje!
-</div>
+    <h1>Bem-vindo ao VendeJá!</h1>
+    <p>Compre e venda produtos de forma rápida, fácil e segura.</p>
 
-<div class="container">
-    <h2>Produtos em Destaque</h2>
-
-    <div class="produtos">
-
-        <div class="card">
-            <img src="https://via.placeholder.com/200" alt="Produto 1">
-            <h3>Produto 1</h3>
-            <p>R$ 49,90</p>
-            <button>Comprar</button>
-        </div>
-
-        <div class="card">
-            <img src="https://via.placeholder.com/200" alt="Produto 2">
-            <h3>Produto 2</h3>
-            <p>R$ 79,90</p>
-            <button>Comprar</button>
-        </div>
-
-        <div class="card">
-            <img src="https://via.placeholder.com/200" alt="Produto 3">
-            <h3>Produto 3</h3>
-            <p>R$ 29,90</p>
-            <button>Comprar</button>
-        </div>
-
-        <div class="card">
-            <img src="https://via.placeholder.com/200" alt="Produto 4">
-            <h3>Produto 4</h3>
-            <p>R$ 99,90</p>
-            <button>Comprar</button>
-        </div>
-
-    </div>
-</div>
-
-<footer>
-    VendeJá © 2025 — Todos os direitos reservados
-</footer>
-
+    <script src="script.js"></script>
 </body>
 </html>
